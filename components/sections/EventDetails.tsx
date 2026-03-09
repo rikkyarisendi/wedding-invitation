@@ -1,4 +1,5 @@
-'use client';
+'use client'
+
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { MapPin, Clock, Calendar, ExternalLink } from 'lucide-react';

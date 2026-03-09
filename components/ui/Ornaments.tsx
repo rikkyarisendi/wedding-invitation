@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 // ╔══════════════════════════════════════════════════════════════╗
 // ║  ORNAMENTS.tsx — Semua SVG kultural Sunda-Jawa ada di sini  ║

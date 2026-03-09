@@ -7,24 +7,24 @@ export const weddingConfig = {
   bride: {
     name:       'Dinda Intan Pratiwi',
     nickname:   'Dinda',
-    fullName:   'Dinda Intan Pratiwi, S.Pd.',
-    parents:    'Putri dari Bapak Bambang Pratiwi & Ibu Sari Lestari',
+    fullName:   'Dinda Intan Pratiwi',
+    parents:    'Putri dari Bapak & Ibu',
     photo:      '/images/bride.jpg',
-    instagram:  '@dinda.intan',
+    instagram:  '@dindaip',
   },
   groom: {
     name:       'Rikky Arisendi',
     nickname:   'Rikky',
-    fullName:   'Rikky Arisendi, S.T.',
-    parents:    'Putra dari Bapak Hendra Arisendi & Ibu Dewi Rahayu',
+    fullName:   'Rikky Arisendi',
+    parents:    'Putra dari Bapak Sopandi & Ibu Yani Mulyani',
     photo:      '/images/groom.jpg',
-    instagram:  '@rikky.arisendi',
+    instagram:  '@rikkyarisendi',
   },
 
   // ---------- EVENT ----------
   event: {
     akad: {
-      date:     '2025-09-20',
+      date:     '2026-12-12',
       time:     '08:00',
       endTime:  '10:00',
       venue:    'Masjid Al-Hikmah',
@@ -33,7 +33,7 @@ export const weddingConfig = {
       mapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0!2d106.8456!3d-6.2088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMzEuNyJTIDEwNsKwNTAnNDQuMiJF!5e0!3m2!1sen!2sid!4v1234567890',
     },
     reception: {
-      date:     '2025-09-20',
+      date:     '2026-12-12',
       time:     '11:00',
       endTime:  '15:00',
       venue:    'The Grand Ballroom — Hotel Mulia',
@@ -116,9 +116,9 @@ export const weddingConfig = {
   },
 
   // ---------- HASHTAG & SOCIAL ----------
-  hashtag:   '#RikkyDinda2025',
+  hashtag:   '#RikkyDinda2026',
   loveStory: 'Rikky & Dinda',
 
   // ---------- ADMIN ----------
-  adminPassword: 'wedding2025admin',   // Ganti di production!
+  adminPassword: 'admin123',   // Ganti di production!
 };

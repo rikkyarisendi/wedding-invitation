@@ -1,0 +1,10 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { weddingConfig } from '@/lib/config';
+
+export async function POST(req: NextRequest) {
+    const { password } = await req.json();
+    if (password === weddingConfig.adminPassword) {
+        return NextResponse.json({ success: true });
+    }
+    return NextResponse.json({ success: false }, { status: 401 });
+}
