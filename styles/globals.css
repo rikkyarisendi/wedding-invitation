@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Josefin+Sans:wght@200;300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display:  'Cinzel Decorative', 'Georgia', serif;
+  --font-serif:    'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  --font-cormorant:'Cormorant Garamond', Georgia, serif;
+  --font-body:     'Josefin Sans', sans-serif;
+
+  --bg-primary:    #f7f0e6;
+  --bg-secondary:  #efe5d3;
+  --bg-accent:     #e8d9c0;
+  --text-primary:  #2a1f0e;
+  --text-muted:    #7a5c3a;
+  --gold:          #c8922a;
+  --gold-light:    #e8b84b;
+  --gold-pale:     #f5dfa0;
+  --sienna:        #8b3a1a;
+  --forest:        #2d4a2a;
+  --batik-red:     #9b2335;
+  --border:        rgba(200,146,42,0.3);
+  --border-strong: rgba(200,146,42,0.6);
+  --card-bg:       rgba(247,240,230,0.85);
+  --shadow:        0 8px 40px rgba(42,31,14,0.12);
+}
+
+.dark {
+  --bg-primary:    #160f05;
+  --bg-secondary:  #1e1508;
+  --bg-accent:     #261c0e;
+  --text-primary:  #f5e8d0;
+  --text-muted:    #c8a878;
+  --gold:          #e8b84b;
+  --gold-light:    #f5d96d;
+  --gold-pale:     #7a5c1a;
+  --sienna:        #d4603a;
+  --border:        rgba(232,184,75,0.2);
+  --border-strong: rgba(232,184,75,0.4);
+  --card-bg:       rgba(26,21,8,0.88);
+  --shadow:        0 8px 40px rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+.batik-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem auto;
+  max-width: 400px;
+}
+.batik-divider::before,
+.batik-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold));
+}
+.batik-divider::after {
+  background: linear-gradient(to left, transparent, var(--gold));
+}
+.batik-divider-center {
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 0.4rem;
+  flex-shrink: 0;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.batik-card {
+  position: relative;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.batik-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.75rem;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--gold), var(--sienna), var(--gold-light), var(--forest), var(--gold));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.section-padding { padding: 5rem 1.5rem; }
+@media (min-width: 768px) { .section-padding { padding: 7rem 2rem; } }
+
+.batik-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='2' fill='none' stroke='%23c8922a' stroke-width='0.5' opacity='0.25'/%3E%3Ccircle cx='30' cy='30' r='8' fill='none' stroke='%23c8922a' stroke-width='0.3' opacity='0.15'/%3E%3Ccircle cx='30' cy='30' r='15' fill='none' stroke='%23c8922a' stroke-width='0.2' opacity='0.1'/%3E%3Cpath d='M30 15 L33 27 L30 30 L27 27 Z' fill='%23c8922a' opacity='0.08'/%3E%3Cpath d='M30 45 L33 33 L30 30 L27 33 Z' fill='%23c8922a' opacity='0.08'/%3E%3Cpath d='M15 30 L27 27 L30 30 L27 33 Z' fill='%23c8922a' opacity='0.08'/%3E%3Cpath d='M45 30 L33 27 L30 30 L33 33 Z' fill='%23c8922a' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+.kawung-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cellipse cx='20' cy='40' rx='14' ry='9' fill='none' stroke='%23c8922a' stroke-width='0.5' opacity='0.2'/%3E%3Cellipse cx='60' cy='40' rx='14' ry='9' fill='none' stroke='%23c8922a' stroke-width='0.5' opacity='0.2'/%3E%3Cellipse cx='40' cy='20' rx='9' ry='14' fill='none' stroke='%23c8922a' stroke-width='0.5' opacity='0.2'/%3E%3Cellipse cx='40' cy='60' rx='9' ry='14' fill='none' stroke='%23c8922a' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
+}
+
+.parang-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 40 Q10 20 20 0 Q25 10 30 0 Q20 20 10 40 Z' fill='%23c8922a' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+.text-gold   { color: var(--gold); }
+.text-sienna { color: var(--sienna); }
+.bg-gold     { background-color: var(--gold); }
+
+#main-content {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-15px) rotate(5deg); }
+  66%       { transform: translateY(-8px) rotate(-3deg); }
+}
+@keyframes petalFall {
+  0%   { transform: translateY(-5vh) translateX(0) rotate(0deg); opacity: 0.9; }
+  100% { transform: translateY(105vh) translateX(60px) rotate(540deg); opacity: 0; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 40%, var(--gold-pale) 50%, var(--gold-light) 60%, var(--gold) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}

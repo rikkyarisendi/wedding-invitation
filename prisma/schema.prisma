@@ -1,0 +1,46 @@
+// This is your Prisma schema file
+// Run: npx prisma migrate dev --name init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"   // Change to "mongodb" if using MongoDB
+  url      = env("DATABASE_URL")
+}
+
+model RSVP {
+  id         String   @id @default(uuid())
+  name       String
+  phone      String
+  attendance String   // "attend" | "notAttend"
+  guests     Int      @default(1)
+  session    String   @default("1")
+  message    String?
+  createdAt  DateTime @default(now())
+
+  @@map("rsvps")
+}
+
+model Wish {
+  id        String   @id @default(uuid())
+  name      String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@map("wishes")
+}
+
+model GuestToken {
+  id         String   @id @default(uuid())
+  token      String   @unique
+  guestName  String
+  guests     Int      @default(1)
+  checkedIn  Boolean  @default(false)
+  checkedAt  DateTime?
+  rsvpId     String?
+  createdAt  DateTime @default(now())
+
+  @@map("guest_tokens")
+}
